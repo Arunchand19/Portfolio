@@ -21,8 +21,8 @@
                 <a href="#contact-info">Contact</a>
             </div>
             <div class="search-container">
-                <input type="search" name="search" placeholder="Search...">
-                <button style="padding-bottom: 10px;">Search</button>
+                <input type="search" id="search-input" name="search" placeholder="Search...">
+                <button id="search-button">Search</button>
             </div>
         </div>
     </nav>
@@ -53,24 +53,23 @@
     
     
 
-    <br><br/>
+
    
 
-    <br><br/>
     <br><br/>
     <div id="about-section" class="about">
         <h1 style="text-align: center;">About Me</h1>
         <br><br/>
         <h3 style="font-size:30px;">My Introduction</h3>
         <br><br/>
-        <p>I'm a undergraduate, passionate about technology and an avid reader. I thrive in dynamic environments and am driven to constantly improve myself. Currently, I am seeking a challenging role that will help me expand my skill set and contribute meaningfully to the organization.</p>
+        <p>I'm a undergraduate, passionate about technology and continuously expanding my skills in software development. I thrive on tackling new challenges and collaborating on innovative projects. I am driven to constantly improve myself. Currently, I am seeking a challenging role that will help me expand my skill set and contribute meaningfully to the organization.</p>
         <h3 style="font-size:28px;">Additional Details</h3>
         <br/>
         <p>Besides my technical skills, I have developed strong communication and leadership skills through various college projects and extracurricular activities. I am particularly interested in software development, data science, and artificial intelligence.</p>
 
         <div class="extra-info">
             <p><strong>CGPA: 8.87</strong></p>
-            <p><strong>Experience: 1 month in software development projects</strong></p>
+            <p><strong>Experience: Worked on Industry projects.</strong></p>
             <p><strong>Hobbies: Playing Cricket ,Table Tennis.</strong></p>
         </div>
 
@@ -78,6 +77,7 @@
     </div>
 
     <br><br/>
+  
 
     <div id="Experience" class="exp">
         <h1>Experience</h1>
@@ -325,6 +325,21 @@
 
     </div>
 <script>
+
+  document.getElementById('search-button').addEventListener('click', function(e) {
+      e.preventDefault();  // Prevent any default form submission
+      let searchQuery = document.getElementById('search-input').value.trim();
+      if (searchQuery) {
+          // window.find will search the page and highlight the first match
+          if (!window.find(searchQuery)) {
+              alert("Text not found!");
+          }
+      } else {
+          alert("Please enter a search term.");
+      }
+  });
+
+
    let currentIndex = 0;
 
 function moveSlide(direction) {
